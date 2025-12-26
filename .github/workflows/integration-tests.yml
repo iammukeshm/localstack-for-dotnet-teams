@@ -29,9 +29,17 @@ jobs:
 
       - name: Wait for LocalStack
         run: |
-          echo "Waiting for LocalStack..."
-          timeout 60 bash -c 'until curl -s http://localhost:4566/_localstack/health | grep -q "running"; do sleep 2; done'
-          echo "LocalStack is ready!"
+          echo "Waiting for LocalStack to be ready..."
+          for i in {1..30}; do
+            if curl -s http://localhost:4566/_localstack/health | grep -q '"s3": "available"'; then
+              echo "LocalStack is ready!"
+              exit 0
+            fi
+            echo "Attempt $i: LocalStack not ready yet, waiting..."
+            sleep 2
+          done
+          echo "LocalStack failed to start"
+          exit 1
 
       - name: Create AWS Resources
         env:

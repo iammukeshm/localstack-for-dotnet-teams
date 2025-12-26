@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AWSSDK.DynamoDBv2" Version="3.7.404.7" />
+    <PackageReference Include="AWSSDK.S3" Version="3.7.410.3" />
+    <PackageReference Include="AWSSDK.SQS" Version="3.7.400.83" />
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.0" />
+    <PackageReference Include="Scalar.AspNetCore" Version="2.1.9" />
+  </ItemGroup>
+
+</Project>

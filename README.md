@@ -85,6 +85,20 @@ curl http://localhost:5000/messages
 curl http://localhost:5000/receipts
 ```
 
+## Running Integration Tests
+
+The project includes integration tests that run against LocalStack:
+
+```bash
+dotnet test
+```
+
+The tests verify:
+- **DynamoDB**: Write and read order records
+- **S3**: Upload and download receipt files
+
+Make sure LocalStack is running with resources created before running tests.
+
 ## API Endpoints
 
 | Method | Endpoint | Description |

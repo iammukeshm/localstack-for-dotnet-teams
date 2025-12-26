@@ -1,3 +1,4 @@
 <Solution>
   <Project Path="LocalStackDemo.Api/LocalStackDemo.Api.csproj" />
+  <Project Path="LocalStackDemo.Tests/LocalStackDemo.Tests.csproj" />
 </Solution>
